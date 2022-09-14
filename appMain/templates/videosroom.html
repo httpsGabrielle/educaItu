@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Tarefas{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    {%for video in videos %}
+    <div class="col">
+      <div class="rounded card m-3" style="width: 18rem;">
+          <img src="" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{video.nome_videos}}</h5>
+            <p class="card-text">{{video.desc_videos}}</p>
+            <a href="{{video.link_videos}}" class="btn btn-primary">Acessar</a>
+          </div>
+       </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+

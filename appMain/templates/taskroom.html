@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Tarefas{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    {%for atividade in atividades %}
+    <div class="col">
+      <div class="rounded card" style="width: 18rem;">
+          <img src="" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{atividade.nome_atividades}}</h5>
+            <p class="card-text">{{atividade.desc_atividades}}</p>
+            <a href="{{atividade.link_atividades}}" class="btn btn-primary">Acessar</a>
+          </div>
+       </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Tarefas{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    {%for game in games %}
+    <div class="col">
+      <div class="rounded card" style="width: 18rem;">
+          <img src="https://www.youtube.com/watch?v=4dcLeQsryDY" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{game.nome_games}}</h5>
+            <p class="card-text">{{game.desc_games}}</p>
+            <a href="{{video.link_videos}}" class="btn btn-primary">Acessar</a>
+          </div>
+       </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
