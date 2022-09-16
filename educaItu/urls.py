@@ -10,4 +10,7 @@ urlpatterns = [
     path('games/', views.games, name='games'),
     path('atividades/', views.atividades, name='atividades'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('dashboard/', include('appUsers.urls')),
 ]
+
+
