@@ -8,7 +8,10 @@ $(document).ready(function() {
        $(this).removeClass('shadow');
      }
    );
-      
-   });
    
+   });
+
+
+
+    
    

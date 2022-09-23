@@ -1,1 +1,33 @@
 {% extends 'dashboard.html' %}
+{% block 'titulo' %}{% block title %}Cadastrar escolas{% endblock %}{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid d-flex px-3 justify-content-end">
+        <div class="mx-2">
+            <div class="input-group rounded border rounded-pill">
+                <input type="search" class="form-control border-0 bg-transparent" placeholder="Pesquisar" aria-label="Search" aria-describedby="search-addon" />
+                <span class="input-group-text border-0 bg-transparent">
+                    <span class="material-symbols-outlined" style="color:#18a770;">search</span> 
+                </span>
+            </div>
+        </div>
+        <div>
+            <div class=" d-flex flex-row">
+                <button type="button" class="btn btn-green text-white fw-bold" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;">
+                Adicionar 
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mx-5" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title fw-bolder">Nome</h5>
+          <h6 class="card-text text-gray text-uppercase lh-1">Endereço</h6>
+          <p></p>
+          <a href="#"><button type="button" class="btn btn-green text-white fw-bold">Edit</button></a>
+        </div>
+      </div>
+
+{% endblock %}

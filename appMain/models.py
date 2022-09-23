@@ -11,6 +11,7 @@ class Videos(models.Model):
     link_videos = models.CharField(max_length=100)
     desc_videos = models.CharField(max_length=200)
     materia = models.ForeignKey(Materia, on_delete=models.DO_NOTHING)
+    publicado = models.BooleanField(default=False)
 
     class Meta:
         verbose_name= 'Video'
@@ -23,6 +24,7 @@ class Games(models.Model):
     link_games = models.CharField(max_length=100)
     desc_games = models.CharField(max_length=200)
     materia = models.ForeignKey(Materia, on_delete=models.DO_NOTHING)
+    publicado = models.BooleanField(default=False)
 
     class Meta:
         verbose_name= 'Game'
@@ -35,6 +37,7 @@ class Atividades(models.Model):
     link_atividades = models.CharField(max_length=100)
     desc_atividades = models.CharField(max_length=200)
     materia = models.ForeignKey(Materia, on_delete=models.DO_NOTHING)
+    publicado = models.BooleanField(default=False)
 
     class Meta:
         verbose_name= 'Atividades'
