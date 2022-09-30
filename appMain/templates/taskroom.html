@@ -6,6 +6,7 @@
 <div class="container">
   <div class="row">
     {%for atividade in atividades %}
+    {% if atividade.publicado %}
     <div class="col">
       <div class="rounded card" style="width: 18rem;">
           <img src="" class="card-img-top" alt="...">
@@ -16,6 +17,7 @@
           </div>
        </div>
     </div>
+    {% endif %}
     {% endfor %}
 </div>
 {% endblock %}

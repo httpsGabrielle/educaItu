@@ -22,7 +22,7 @@
 <body>
     <div class="d-flex vh-100">
         <div class="col-2 h-100 d-flex justify-content-between flex-column bg-menucolor">
-            <div class="container p-3">
+            <div class="container pt-3">
                 <a class="navbar-brand text-dark d-flex align-items-center logo" href="/"><img class="px-3" src="{% static 'img/icons/Logo.png' %}">Cultura Digital Itu</a>
                 <div class="container py-5">
                     <a class="text-decoration-none text-dark menuItem text-gray" href="/dashboard">
@@ -53,12 +53,14 @@
                     </a>
                 </div>
             </div>
-           <div class="container px-3">
+           <a href="{% url 'login'%}" class="text-decoration-none text-dark menuItem">
+            <div class="container px-3">
                 <div class="d-flex border-top p-3">
                     <div class="col-2"><span class="material-symbols-outlined">logout</span></div>
-                        <div class="col-10"><p>Sair</p></div>
+                    <div class="col-10"><p>Sair</p></div>
                 </div>
            </div>
+           </a>
         </div>
 
         <div class="col-10 shadow-sm">
@@ -66,24 +68,23 @@
                 <div class="container-fluid">
                     <h3 class="logo">{% block 'titulo' %}{% endblock %}</h3>
                     <div class="btn-group">
-                        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> Username </button>
+                        <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> {{ user.get_username }} </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><div class="dropdown-header d-flex align-items-center"><span class="material-symbols-outlined pe-3">account_circle</span>Admin</div></li>
+                            <li><div class="dropdown-header d-flex align-items-center"><span class="material-symbols-outlined pe-3">account_circle</span>{{ user.get_username }}</div></li>
                             <li class="px-3"><hr class="dropdown-divider"></li>
                             <li><div class="dropdown-item d-flex" type="button"><span class="material-symbols-outlined pe-3">settings</span>Perfil</div></li>
                             <li><div class="dropdown-item d-flex" type="button"><span class="material-symbols-outlined pe-3">info</span>Ajuda</div></li>
                             <li class="px-3"><hr class="dropdown-divider"></li>
-                            <li><div class="dropdown-item d-flex" type="button"><span class="material-symbols-outlined pe-3">logout</span>Sair</div></li>
+                            <li><a href="{% url 'login'%}" class="text-decoration-none"><div class="dropdown-item d-flex" type="button"><span class="material-symbols-outlined pe-3">logout</span>Sair</div></li></a>
                         </ul>
                       </div>
                 </div>
             </nav>
 
-            {% block content %}
+            {% block 'header' %}            
             {% endblock %}
         </div>
-
-
     </div>
+    
 </body>
 </html>
